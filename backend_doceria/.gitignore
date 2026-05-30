@@ -1,0 +1,17 @@
+# Dependências do Node.js (Pasta gigante descarregada pelo npm install)
+node_modules/
+
+# Ficheiros de configuração local e senhas (CRÍTICO!)
+.env
+
+# Logs do sistema e erros (Ficheiros gerados automaticamente em caso de falha)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Pastas geradas por IDEs ou Sistemas Operativos (Opcional, mas recomendado)
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db   
