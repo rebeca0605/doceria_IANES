@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doceria IANES - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <header class="header-doceria">
+        <div class="logo-container">
+            <img src="./src/Vector.svg" alt="">
+            <div class="logo-texto">
+                <span class="txt-doceria">Doceria</span>
+                <span class="txt-ianes">IANES</span>
+            </div>
+        </div>
+
+        <div class="busca-container">
+            <input type="text" placeholder="Pesquisar doce..." class="input-busca-header">
+        </div>
+
+        <div class="usuario-container" onclick="realizarLogoff()" style="cursor: pointer;">
+            <img src="./src/Account circle.svg" alt="Usuário">
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card-cadastro">
+            <h3>Cadastrar Novo Doce</h3>
+            <form class="formulario">
+                <input type="text" placeholder="Nome do doce" required>
+                <input type="text" placeholder="Tipo da Massa" required>
+                <input type="text" placeholder="Recheio" required>
+                <input type="text" placeholder="Cobertura" required>
+                <input type="number" step="0.01" placeholder="Preço (R$)" required>
+                <input type="text" placeholder="Tipo da porção (ex.: unidade)" required>
+                <input type="text" placeholder="Quantidade" required>
+                <input type="datetime" step="0.01" placeholder="Data de Vencimento" required>
+                <button type="submit" class="btn-salvar">Salvar Doce</button>
+            </form>
+        </div>
+
+        <div class="lista-produtos">
+
+            <div class="produto-item">
+                <div class="info-produto">
+                    <h3>Brigadeiro Gourmet</h3>
+                    <p class="preco">R$ 4,50</p>
+                </div>
+                <div class="status-produto">
+                    <span class="qtd">Qtd: 50</span>
+                    <span class="status-ok">Em estoque</span>
+                    <button onclick="deletarDoce(1)" style="margin-top: 8px; cursor: pointer;">Excluir</button>
+                </div>
+            </div>
+
+            <div class="produto-item alerta-vencimento">
+                <div class="info-produto">
+                    <h3>Bolo de Cenoura</h3>
+                    <p class="preco">R$ 7,00</p>
+                </div>
+                <div class="status-produto">
+                    <span class="qtd-alerta">Qtd: 3</span>
+                    <span class="status-erro">Próximo ao Vencimento!</span>
+                    <button onclick="deletarDoce(1)" style="margin-top: 8px; cursor: pointer;">Excluir</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

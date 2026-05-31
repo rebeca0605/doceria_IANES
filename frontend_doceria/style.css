@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FDF8F5;
+    margin: 0;
+    padding: 0;
+    color: #2F3E46;
+}
+
+.header-doceria {
+    background-color: #FBCAD5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    height: 50px;
+    margin-bottom: 30px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-container img {
+    width: 35px;
+}
+
+.txt-ianes{
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-family: Inter, sans-serif;
+    color: white;
+}
+
+.txt-doceria{
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-family: Inter, sans-serif;
+    color: #C889A2;
+}
+
+.logo-texto {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.busca-container {
+    flex-grow: 1;
+    max-width: 550px;
+    margin: 0 20px;
+}
+
+.input-busca-header {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    outline: none;
+    background-color: #FFFFFF;
+    color: #C889A2;
+    font-weight: bold;
+}
+
+.input-busca-header::placeholder {
+    color: #B37D89;
+}
+
+.usuario-container img{
+    width: 45px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.card-cadastro {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #C889A2;
+    margin-bottom: 20px;
+}
+
+.card-cadastro h3 { 
+    margin-top: 0; 
+    color: #C889A2;
+    font-family: 'Inter', sans-serif; 
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.btn-salvar {
+    background-color: #C889A2;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.lista-produtos {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.produto-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #C889A2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-produto h3 {
+    margin: 0 0 5px 0; 
+    font-size: 18px; 
+    color: #C889A2;
+}
+
+.preco {
+    margin: 0; 
+    color: #FFD2E4; 
+    font-weight: bold; 
+}
+
+.status-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.status-produto button{
+    background-color: #C889A2;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 11px;
+    width: 55px;
+    height: 25px;
+}
+
+.qtd { 
+    font-weight: bold; 
+    color: #FF9F43; 
+}
+
+.status-ok {
+    color: #2ED573; 
+    font-size: 14px; 
+}
+
+.alerta-vencimento {
+    border: 2px solid #FF5252;
+    background-color: #FFF5F5;
+}
+.qtd-alerta { font-weight: bold; color: #FF5252; }
+.status-erro { color: #FF5252; font-size: 14px; font-weight: bold; }
