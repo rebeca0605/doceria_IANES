@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doceria IANES - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-header">
+            <img src="./src/Vector.svg" alt="Logo Doceria IANES">
+            <h2>Bem-vindo de volta!</h2>
+            <p>Insira seu ID para gerenciar os doces</p>
+        </div>
+
+        <form id="form-login" class="login-form">
+            <div class="input-group">
+                <label for="user-id">ID do Usuário</label>
+                <input type="text" id="user-id" placeholder="Ex: 6" required>
+            </div>
+            
+            <button type="submit" class="btn-entrar">Entrar no Sistema</button>
+        </form>
+    </div>
+
+    <script type="module">
+        document.getElementById('form-login').addEventListener('submit', (event) => {
+            event.preventDefault();
+            
+            const idDigitado = document.getElementById('user-id').value.trim();
+
+            if (idDigitado && !isNaN(idDigitado)) {
+                localStorage.setItem("userId", idDigitado);
+                
+                alert(`Login realizado com sucesso! Bem-vindo(a).`);
+                
+                window.location.href = "index.html";
+            } else {
+                alert("Por favor, insira um ID numérico válido.");
+            }
+        });
+    </script>
+</body>
+</html>

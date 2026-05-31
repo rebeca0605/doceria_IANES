@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FDF8F5; /* Fundo off-white idêntico à Home */
+    margin: 0;
+    padding: 0;
+    color: #2F3E46;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centraliza verticalmente na tela */
+}
+
+.login-container {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid #C889A2; /* Borda na cor principal */
+    box-shadow: 0 4px 15px rgba(200, 137, 162, 0.15);
+    width: 100%;
+    max-width: 380px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.login-header img {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.login-header h2 {
+    margin: 0 0 8px 0;
+    color: #C889A2; /* Rosa escuro/Marsala */
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+}
+
+.login-header p {
+    margin: 0 0 30px 0;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 6px;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #B37D89;
+    font-weight: bold;
+}
+
+.input-group input {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #C889A2; /* Destaca ao focar */
+}
+
+.btn-entrar {
+    background-color: #C889A2;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-entrar:hover {
+    background-color: #B37D89; /* Tom ligeiramente mais escuro no hover */
+}

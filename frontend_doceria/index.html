@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doceria IANES - Home</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </head>
 
 <body>
@@ -33,14 +33,14 @@
         <div class="card-cadastro">
             <h3>Cadastrar Novo Doce</h3>
             <form class="formulario">
-                <input type="text" placeholder="Nome do doce" required>
-                <input type="text" placeholder="Tipo da Massa" required>
-                <input type="text" placeholder="Recheio" required>
-                <input type="text" placeholder="Cobertura" required>
-                <input type="number" step="0.01" placeholder="Preço (R$)" required>
-                <input type="text" placeholder="Tipo da porção (ex.: unidade)" required>
-                <input type="text" placeholder="Quantidade" required>
-                <input type="datetime" step="0.01" placeholder="Data de Vencimento" required>
+                <input type="text" id="doce-nome" placeholder="Nome do doce" required>
+                <input type="text" id="doce-massa" placeholder="Tipo da Massa" required>
+                <input type="text" id="doce-recheio" placeholder="Recheio" required>
+                <input type="text" id="doce-cobertura" placeholder="Cobertura" required>
+                <input type="number" step="0.01" id="doce-preco" placeholder="Preço (R$)" required>
+                <input type="text" id="doce-porcao" placeholder="Tipo da porção (ex.: unidade)" required>
+                <input type="text" id="doce-qtd" placeholder="Quantidade" required>
+                <input type="datetime" id="doce-vencimento" placeholder="Data de Vencimento" required>
                 <button type="submit" class="btn-salvar">Salvar Doce</button>
             </form>
         </div>

@@ -153,7 +153,7 @@ const excluirProduto = async function(id, idUsuario){
 
                 return MESSAGES.DEFAULT_HEADER // 200 Sucesso real!
             }else{
-                return MESSAGES.ERROR_INTERNAL_SERVER_MODEL // 500 se o produto não existir ou houver trava de FK
+                return MESSAGES.ERROR_INTERNAL_SERVER_MODEL // 500
             }
         }else{
             MESSAGES.ERROR_REQUIRED_FIELDS.message += ' [id do produto ou usuário incorreto]'
@@ -167,6 +167,7 @@ const excluirProduto = async function(id, idUsuario){
 }
 
 const validarDadosProduto = async function (produto) {
+    // Criando um objeto novo para as mensagens
     let MESSAGES = JSON.parse(JSON.stringify(DEFAULT_MESSAGES))
 
     if (produto.nome == '' || produto.nome == undefined || produto.nome == null || produto.nome.length > 100) {
