@@ -8,7 +8,6 @@
 const produtosDAO = require('../../model/produtos.js')
 const DEFAULT_MESSAGES = require('../modulo/config_messages.js')
 
-// Retorna uma lista de todos os produtos
 const listarProdutos = async function () {
     // Criando um objeto novo para as mensagens
     let MESSAGES = JSON.parse(JSON.stringify(DEFAULT_MESSAGES))
@@ -34,7 +33,6 @@ const listarProdutos = async function () {
     }
 }
 
-// Retorna um produto pelo id
 const buscarProdutoId = async function (id) {
 
     let MESSAGES = JSON.parse(JSON.stringify(DEFAULT_MESSAGES))
@@ -67,7 +65,6 @@ const buscarProdutoId = async function (id) {
     }
 }
 
-//Insere um produto
 const inserirProduto = async function (produto, contentType) {
     let MESSAGES = JSON.parse(JSON.stringify(DEFAULT_MESSAGES))
 
@@ -76,13 +73,11 @@ const inserirProduto = async function (produto, contentType) {
             let validar = await validarDadosProduto(produto)
 
             if (!validar) {
-                // Aqui resultProdutos vai receber o número do ID gerado (ex: 5)
                 let resultProdutos = await produtosDAO.setInsertProduct(produto)
 
-                // Se resultProdutos for um número (ID válido), entra aqui direto!
                 if (resultProdutos) {
 
-                    produto.id = resultProdutos // Coloca o ID gerado direto no objeto
+                    produto.id = resultProdutos
 
                     MESSAGES.DEFAULT_HEADER.status = MESSAGES.SUCCESS_CREATED_ITEM.status
                     MESSAGES.DEFAULT_HEADER.status_code = MESSAGES.SUCCESS_CREATED_ITEM.status_code
@@ -100,12 +95,11 @@ const inserirProduto = async function (produto, contentType) {
             return MESSAGES.ERROR_CONTENT_TYPE // 415
         }
     } catch (error) {
-        console.error("👉 ERRO DENTRO DO CATCH DA CONTROLLER:", error)
+        console.error("ERRO DENTRO DO CATCH DA CONTROLLER:", error)
         return MESSAGES.ERROR_INTERNAL_SERVER_CONTROLLER // 500
     }
 }
 
-//Atualiza um produto filtrando pelo id
 const atualizarProduto = async function (produto, id, contentType) {
     let MESSAGES = JSON.parse(JSON.stringify(DEFAULT_MESSAGES))
 
@@ -115,13 +109,8 @@ const atualizarProduto = async function (produto, id, contentType) {
             let validar = await validarDadosProduto(produto)
 
             if (!validar) {
-
-                // COMENTAMOS A VALIDAÇÃO DO ID PARA TESTAR O UPDATE DIRETO
-                // let validarId = await buscarProdutoId(id)
-
                 produto.id = Number(id)
 
-                // Executa o update direto no banco
                 let resultProdutos = await produtosDAO.setUpdateProduct(produto)
 
                 if (resultProdutos) {
@@ -143,19 +132,17 @@ const atualizarProduto = async function (produto, id, contentType) {
         }
 
     } catch (error) {
-        console.error("👉 ERRO REAL NA CONTROLLER:", error)
+        console.error("ERRO REAL NA CONTROLLER:", error)
         return MESSAGES.ERROR_INTERNAL_SERVER_CONTROLLER || { status: false, status_code: 500 }
     }
 }
 
-//Exclui um produto gerenciando o histórico de descarte
 const excluirProduto = async function(id, idUsuario){
     let MESSAGES = JSON.parse(JSON.stringify(DEFAULT_MESSAGES))
 
     try {
         if(!isNaN(id) && id != '' && id != null && id > 0 && !isNaN(idUsuario) && idUsuario != null){
 
-            // Manda os dois IDs para a model fazer a operação casada
             let resultProdutos = await produtosDAO.setDeleteProduct(Number(id), Number(idUsuario))
 
             if(resultProdutos){
@@ -180,7 +167,6 @@ const excluirProduto = async function(id, idUsuario){
 }
 
 const validarDadosProduto = async function (produto) {
-    // Criando um objeto novo para as mensagens
     let MESSAGES = JSON.parse(JSON.stringify(DEFAULT_MESSAGES))
 
     if (produto.nome == '' || produto.nome == undefined || produto.nome == null || produto.nome.length > 100) {
