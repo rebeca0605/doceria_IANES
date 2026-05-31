@@ -19,7 +19,7 @@ const DEFAULT_HEADER = {development: 'Rebeca Gomes',
                         }                    
 
 /******************************* MENSAGENS DE SUCESSO *******************************/
-const SUCESS_REQUEST        = {status: true, status_code: 200, message: 'Requisição bem sucedida!'}
+const SUCCESS_REQUEST        = {status: true, status_code: 200, message: 'Requisição bem sucedida!'}
 const SUCCESS_CREATED_ITEM   = {status: true, status_code: 201, message: 'Item criado com sucesso!'}
 const SUCCESS_UPDATED_ITEM   = {status: true, status_code: 200, message: 'Item atualizado com sucesso!'}
 const SUCCESS_DELETED_ITEM   = {status: true, status_code: 200, message: 'Item excluído com sucesso!'}
@@ -35,7 +35,7 @@ const ERROR_RELATIONAL_INSERTION        = {status: false, status_code: 500, mess
 
 module.exports = {
     DEFAULT_HEADER,
-    SUCESS_REQUEST,
+    SUCCESS_REQUEST,
     SUCCESS_CREATED_ITEM,
     SUCCESS_UPDATED_ITEM,
     SUCCESS_DELETED_ITEM,

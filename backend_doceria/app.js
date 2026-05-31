@@ -51,6 +51,38 @@ app.get('/v1/doceria/produtos/:id', async function (request, response) {
     response.json(produto)
 })
 
+app.post('/v1/doceria/produtos', cors(), async function (request, response) {
+    let dadosBody = request.body
+
+    let contentType = request.headers['content-type']
+
+    let produtos = await controllerProdutos.inserirProduto(dadosBody, contentType)
+
+    response.status(produtos.status_code)
+    response.json(produtos)
+})
+
+app.put('/v1/doceria/produtos/:id', cors(), async function (request, response) {
+    let idProduto = request.params.id
+    let dadosBody = request.body
+    let contentType = request.headers['content-type']
+
+    let produtos = await controllerProdutos.atualizarProduto(dadosBody, idProduto, contentType)
+
+    response.status(produtos.status_code)
+    response.json(produtos)
+})
+
+app.delete('/v1/doceria/produtos/:id', cors(), async function (request, response) {
+    let idProduto = request.params.id
+    let idUsuario = request.headers['user-id'] 
+
+    let produtos = await controllerProdutos.excluirProduto(idProduto, idUsuario)
+
+    response.status(produtos.status_code)
+    response.json(produtos)
+})
+
 // Start na API
 app.listen(PORT, function () {
     console.log(`API aguardando requisições na porta ${PORT}...`)
